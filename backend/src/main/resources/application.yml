@@ -1,0 +1,45 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  datasource:
+    url: jdbc:sqlite:./data/aquaculture.db
+    username:
+    password:
+    driver-class-name: org.sqlite.JDBC
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 30000
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/init.sql
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath:mapper/*.xml
+
+file:
+  export-path: ./data/export/
+
+logging:
+  level:
+    com.aquaculture: debug
+
+# AI Configuration
+ai:
+  zhipu:
+    api-key: cb7d773d01674b92bc871aae4938c653.GQvivZA3SW8KTolh
+    model: GLM-4-Flash
+    api-url: https://open.bigmodel.cn/api/paas/v4/chat/completions
+    timeout: 120000
