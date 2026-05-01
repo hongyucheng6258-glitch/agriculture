@@ -172,8 +172,8 @@ public class StatisticsServiceImpl implements StatisticsService {
         // 1. 近7天投喂量趋势数据
         List<Map<String, Object>> feedingTrend = new ArrayList<>();
         for (int i = 6; i >= 0; i--) {
-            String dayStart = DateUtils.getDaysAgo(i);
-            String dayEnd = DateUtils.getDaysAgo(i).replace("00:00:00", "23:59:59");
+            String dayStart = DateUtils.getDayStart(i);
+            String dayEnd = DateUtils.getDayEnd(i);
             List<Feeding> dayFeedings = feedingMapper.selectList(
                     new QueryWrapper<Feeding>()
                             .ge("feeding_time", dayStart)

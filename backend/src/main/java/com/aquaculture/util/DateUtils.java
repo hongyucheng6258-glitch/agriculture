@@ -25,4 +25,12 @@ public class DateUtils {
     public static String getDaysAgo(int days) {
         return LocalDateTime.now().minusDays(days).format(FORMATTER);
     }
+
+    public static String getDayStart(int daysAgo) {
+        return LocalDateTime.now().minusDays(daysAgo).toLocalDate().atStartOfDay().format(FORMATTER);
+    }
+
+    public static String getDayEnd(int daysAgo) {
+        return LocalDateTime.now().minusDays(daysAgo).toLocalDate().atTime(23, 59, 59).format(FORMATTER);
+    }
 }
