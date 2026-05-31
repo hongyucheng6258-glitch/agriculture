@@ -25,10 +25,9 @@ yarn-error.log*
 # Frontend build
 frontend/dist/
 
-# Database files
-*.db
+# Database backups (exclude backups but keep main db)
 *.db.backup
-data/
+backend/data/export/
 
 # Temporary scripts
 fix_*.py
