@@ -4,13 +4,7 @@
 # Log file
 *.log
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.nar
@@ -19,35 +13,32 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs
-hs_err_pid*
-
 # Maven
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
+backend/target/
 
 # Node.js
-node_modules/
+frontend/node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # Frontend build
-dist/
+frontend/dist/
+
+# Database files
+*.db
+*.db.backup
+data/
+
+# Temporary scripts
+fix_*.py
+fix_*.sql
+regenerate_*.py
+test_*.py
 
 # IDE
 .idea/
 *.iml
-*.ipr
-*.iws
 .vscode/
 *.swp
 *.swo
@@ -57,8 +48,11 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Application
+# Application runtime
 app.log
 nohup.out
 aquaculture-system-1.0.0.jar
 application-local.yml
+
+# Temporary build artifacts
+frontend/frontend-dist.b64.txt
